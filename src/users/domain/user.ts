@@ -38,4 +38,11 @@ export class UserId implements ValueObject<UserId> {
 
 export class User {
   constructor(public id: UserId, public name: UserName) {}
+
+  static create(id: string, name: string): User {
+    const user_id = new UserId(id);
+    const username = new UserName(name);
+
+    return new User(user_id, username);
+  }
 }
