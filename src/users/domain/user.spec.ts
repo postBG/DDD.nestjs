@@ -29,9 +29,7 @@ describe('UserName', () => {
       };
 
       await expect(result).rejects.toThrowError(
-        new ArgumentNullError(
-          'Username should consist of more than 3 characters.',
-        ),
+        new RangeError('Username should consist of more than 3 characters.'),
       );
     });
   });
